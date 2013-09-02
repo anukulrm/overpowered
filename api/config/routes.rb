@@ -1,4 +1,8 @@
 Api::Application.routes.draw do
+  resources :goals do
+    resources :chains, :tasks
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
