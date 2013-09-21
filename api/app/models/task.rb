@@ -1,9 +1,10 @@
 class Task < ActiveRecord::Base
   #the duration is stored in minutes
   attr_accessible :name, :notes, :begin, :duration, :completed_on, :parent_id
+  validates_presence_of :name
 
   has_many :children, class_name: "Task",
-                      foreign_key: "parent_id"
+           foreign_key: "parent_id"
 
   belongs_to :parent, class_name: "Task"
 
@@ -35,6 +36,7 @@ class Task < ActiveRecord::Base
       "Error: duration and complete_on not set."
     end
   end
+
   #Sets the task to completed to Time.now
   #if begin hasn't been set it sets it to the same as completed
   #if begin is set then it will automatically fill in the duration as the difference
@@ -57,6 +59,7 @@ class Task < ActiveRecord::Base
   def leaf_tasks
 
   end
+
   #Get the incomplete children of a node
 
   def get_incomplete_children

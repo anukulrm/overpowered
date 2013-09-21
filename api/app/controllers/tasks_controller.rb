@@ -1,12 +1,17 @@
 class TasksController < ApplicationController
-
+  def index
+    render json: Task.all
+  end
+  def show
+    render json: Task.find(params[:id])
+  end
+=begin
   def new
     @task = Task.new()
     respond_to do |format|
       format.json { render json: @task }
     end
   end
-
   def create
     @task = Task.new(params[:task])
     respond_to do |format|
@@ -15,15 +20,7 @@ class TasksController < ApplicationController
   end
 
   def show
-    @task = Task.find(params[:id])
-    respond_to do |format|
-      if @task.nil?
-        #error
-      else
-        format.json { render json: {:success => true,
-                                    :task => @task.as_json} }
-      end
-    end
+    render json: Task.find(params[:id])
   end
 
   def edit
@@ -55,5 +52,5 @@ class TasksController < ApplicationController
       format.json { head :ok }
     end
   end
-
+=end
 end
