@@ -2,6 +2,8 @@
 ## RubyMine
 #################
 .idea/
+.generators
+.rakeTasks
 
 #################
 ## Eclipse
