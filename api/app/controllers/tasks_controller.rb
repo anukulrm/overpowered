@@ -5,15 +5,15 @@ class TasksController < ApplicationController
   def show
     render json: Task.find(params[:id])
   end
-=begin
-  def new
-    @task = Task.new()
+  def create
+    @task = Task.new(params[:task])
     respond_to do |format|
       format.json { render json: @task }
     end
   end
-  def create
-    @task = Task.new(params[:task])
+=begin
+  def new
+    @task = Task.new()
     respond_to do |format|
       format.json { render json: @task }
     end

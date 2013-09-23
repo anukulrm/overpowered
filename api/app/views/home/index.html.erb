@@ -1,9 +1,13 @@
 <div ng-controller="TasksCtrl">
-  <div id="task-list-container">
-    <ul>
-      <li ng-repeat="task in tasks">
-        <h3>{{task.name}}</h3>
-      </li>
-    </ul>
-  </div>
+  <h1>PLEASE FUCKING WWORK</h1>
+  <ul id="task-list-container">
+    <li ng-repeat="task in tasks">
+      <h3>{{task.name}}</h3>
+    </li>
+  </ul>
 </div>
+<form novalidate class="tasks-form" ng-controller="TasksCtrl">
+Name: <input type="text" ng-model="task.name" /> <br/>
+Notes: <input type="text" ng-model="task.notes"/> <br/>
+
+  </form>
