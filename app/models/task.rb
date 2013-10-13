@@ -2,6 +2,7 @@ class Task < ActiveRecord::Base
   #the duration is stored in minutes
   attr_accessible :name, :notes, :begin, :duration, :completed_on, :parent_id
   validates_presence_of :name
+  validates :name, length: {minimum: 1, maximum:160}
 
   has_many :children, class_name: "Task",
            foreign_key: "parent_id"
