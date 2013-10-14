@@ -3,6 +3,9 @@ overpowered
 
 Not your calendar. Not your todo list. It's your system to achieve your goals.
 
+
+
+-----ALEX'S THOUGHTS-------------
 What should OP help you with?
 
 1. Present your most important tasks first.
